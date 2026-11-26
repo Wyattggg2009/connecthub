@@ -1,0 +1,1 @@
+window.CONNECTHUB={url:"https://fcefqdjjhmkwmavtrbop.supabase.co",key:"sb_publishable_UMCWad2TwG17RxuidexGxw_5mJo5I2d",iceServers:[{urls:"stun:stun.l.google.com:19302"}]};
