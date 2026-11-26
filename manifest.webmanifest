@@ -1,14 +1,26 @@
 {
   "id": "./",
-  "name": "ConnectHub",
-  "short_name": "ConnectHub",
-  "description": "Private messages, calls and groups",
+  "name": "The Pack",
+  "short_name": "The Pack",
+  "description": "Stay close to your pack. Private messages, calls and groups.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#111424",
-  "theme_color": "#111424",
+  "background_color": "#101112",
+  "theme_color": "#101112",
   "icons": [
+    {
+      "src": "pack-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pack-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "icon.svg",
       "sizes": "any",
