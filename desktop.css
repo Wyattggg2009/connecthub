@@ -27,3 +27,6 @@
 /* Small Chromebook windows: keep the composer and contact pane usable. */
 @media(min-width:721px) and (max-width:900px){:root{--pack-rail:132px;--pack-contacts:175px}.desktopContacts{padding:12px 8px}.desktopRail .brand .logo{width:30px;height:30px}.desktopRail .brand strong{font-size:14px}.desktopRail .brand small{display:none}.desktopRail>.adminLink,.desktopRail>button{font-size:11px;padding:7px 5px}#chat>header{flex-wrap:wrap}#chat>header .grow{min-width:75px}#messageForm{flex-wrap:wrap}#messageForm textarea{flex:1 1 120px}#messageForm button[type=submit]{flex:none}.desktopWelcomeActions{width:100%}.desktopKeyHint{line-height:1.7}#groupApp{grid-template-columns:220px minmax(0,1fr)}#groupSend{flex-wrap:wrap}#groupSend textarea{flex:1 1 120px}}
 @media(min-width:721px) and (max-height:560px){#welcome{justify-content:flex-start;overflow:auto;padding-top:16px;padding-bottom:16px}.desktopContacts .packAccountMenu{max-height:30dvh}.desktopAdminNav{position:static}}
+
+@media(max-width:720px){#app>aside .desktopRail>.packWorldLink{display:block!important;padding:9px}}
+.hubEntry:is(a){display:grid;text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:12px;padding:12px;background:#252729}.hubEntry:is(a):hover{background:#36383a}
