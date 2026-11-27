@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'33.0.0',name:'The Next Generation'});
+const PACK_RELEASE=Object.freeze({version:'34.0.0',name:'Pack Reach'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
