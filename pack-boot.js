@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'32.0.0',name:'Steady Connection'});
+const PACK_RELEASE=Object.freeze({version:'33.0.0',name:'The Next Generation'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
@@ -24,8 +24,8 @@ function packDeviceInfo(){
 }
 function packBootStage(text){const e=bootEl('packBootStage');if(e)e.textContent=text}
 function packBootName(name){const e=bootEl('packBootGreeting');if(e&&!bootEl('packBoot')?.hidden&&typeof name==='string'&&name.trim()){e.textContent='Welcome, '+name.trim().slice(0,60);bootNamedAt=performance.now()}}
-function packBootStart(stage='Checking your session…'){const e=bootEl('packBoot');if(!e)return;bootGeneration++;bootNamedAt=0;clearTimeout(bootTimer);e.hidden=false;e.removeAttribute('aria-hidden');bootEl('packBootGreeting').textContent='Welcome to The Pack';packBootStage(stage);const info=packDeviceInfo();bootEl('packBootDevice').textContent=info.device+' · '+info.os;bootEl('packBootSoftware').textContent=info.browser+' · '+info.mode;bootEl('packBootVersion').textContent='Version '+PACK_RELEASE.version;bootTimer=setTimeout(()=>packBootHide(),15000)}
+function packBootStart(stage='Checking your session…'){const e=bootEl('packBoot');if(!e)return;bootGeneration++;bootNamedAt=0;clearTimeout(bootTimer);e.hidden=false;e.removeAttribute('aria-hidden');bootEl('packBootGreeting').textContent='Welcome to The Pack';packBootStage(stage);const info=packDeviceInfo();bootEl('packBootDevice').textContent=info.device+' · '+info.os;bootEl('packBootSoftware').textContent=info.browser+' · '+info.mode;bootEl('packBootVersion').textContent='Version '+PACK_RELEASE.version+' · '+PACK_RELEASE.name;bootTimer=setTimeout(()=>packBootHide(),15000)}
 function packBootHide(){const e=bootEl('packBoot');if(e){e.hidden=true;e.setAttribute('aria-hidden','true')}clearTimeout(bootTimer)}
-async function packBootDone(){const gen=bootGeneration;if(bootEl('packBoot')?.hidden)return;packBootStage('Ready');if(bootNamedAt){const remaining=Math.max(0,800-(performance.now()-bootNamedAt));if(remaining)await new Promise(resolve=>setTimeout(resolve,remaining))}if(gen===bootGeneration)packBootHide()}
+async function packBootDone(){const gen=bootGeneration;if(bootEl('packBoot')?.hidden)return;packBootStage('Ready');if(bootNamedAt){const remaining=Math.max(0,350-(performance.now()-bootNamedAt));if(remaining)await new Promise(resolve=>setTimeout(resolve,remaining))}if(gen===bootGeneration)packBootHide()}
 function packBootFail(){bootGeneration++;bootNamedAt=0;packBootHide()}
 if(document.getElementById('packBoot'))packBootStart();
