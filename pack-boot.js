@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'27.0.0',name:'Pack Radio'});
+const PACK_RELEASE=Object.freeze({version:'28.0.0',name:'Desktop Den'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
