@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'23.0.0',name:'Welcome to the Pack'});
+const PACK_RELEASE=Object.freeze({version:'24.0.0',name:'Connected Pack'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
