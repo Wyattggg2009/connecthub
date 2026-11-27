@@ -163,3 +163,5 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 :root[data-hub-theme=light] #app>aside .contact{color:#20232b;background:#e8eaf0}
 :root[data-hub-theme=light] .ngTabs button{color:#353b46}
 :root[data-hub-theme=light] .ngConnection,:root[data-hub-theme=light] .ngActiveStrip button{color:#4b5362}
+
+@media(max-width:720px){#chat #ngContactOpen{min-width:36px;padding:7px}#chat header{gap:5px}#chat #peerAvatar{width:32px;height:32px}#app .desktopContacts .ngContactTitle button{min-height:36px}#app .ngContactTitle{padding-top:env(safe-area-inset-top)}}
