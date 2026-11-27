@@ -2,7 +2,7 @@
 let hubPrefs={},hubIncoming=[],hubCalls=[],hubKnown=new Set(),hubReady=false,hubTickAt=0,hubPresenceAt=0,hubTypingAt=0,hubBusy=false,hubAudio=null,hubWorker=null,hubGeneration=0;
 function hubKey(){return 'connecthub:v3:'+user.id}
 function hubSave(){if(user)localStorage.setItem(hubKey(),JSON.stringify(hubPrefs))}
-function hubVisible(){return !document.hidden&&!!peer&&!$('chat').hidden&&$('app').classList.contains('chatOpen')}
+function hubVisible(){return !document.hidden&&!!peer&&!$('chat').hidden&&$('app').classList.contains('chatOpen')&&($('watchPanel')?.hidden!==false)&&($('packWorkspace')?.hidden!==false)}
 function hubTime(t){return new Date(t).toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}
 function hubNode(tag,txt,cls){const n=document.createElement(tag);if(txt!==undefined)n.textContent=txt;if(cls)n.className=cls;return n}
 function hubApply(){document.documentElement.dataset.hubTheme=hubPrefs.theme||'midnight';$('hubTheme').value=hubPrefs.theme||'midnight';$('hubSound').checked=hubPrefs.sound!==false;$('hubDesktop').checked=!!hubPrefs.desktop;$('hubPreview').checked=!!hubPrefs.preview;$('hubAvailability').value=profile?.availability||'online'}
