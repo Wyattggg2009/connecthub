@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**28.0.0 — Desktop Den.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**29.0.0 — Pack World & Play.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -15,3 +15,5 @@ Custom chat wallpapers are stored locally per account and conversation. Pack Mus
 Pack Radio uses the official iHeartRadio live station widget. Private two-person rooms share a station selection, not an audio stream. Playback, ads, and live delays are controlled by the provider.
 
 Desktop layout uses a three-pane messaging workspace, collapsible group settings, wide-screen Den and admin navigation, and keyboard shortcuts. Mobile navigation is retained.
+
+Pack World: private two-person 3D rooms with persistent decoration, movement, optional distance-gated WebRTC voice, shared pixel art, tic-tac-toe, pet activities and couple questions. The Fun Hub has device-local arcade games, a card creator and a celebration planner. Feed surprises notify via the existing push service at publication time; older surprises are not retroactively sent. WebGL, device audio and real two-device performance require testing.
