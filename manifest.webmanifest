@@ -27,5 +27,30 @@
       "type": "image/svg+xml",
       "purpose": "any"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Voice command",
+      "short_name": "Voice",
+      "description": "Open voice commands",
+      "url": "./index.html?voice=1",
+      "icons": [
+        {
+          "src": "pack-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Location sharing",
+      "short_name": "Location",
+      "url": "./index.html?location=1",
+      "icons": [
+        {
+          "src": "pack-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }
