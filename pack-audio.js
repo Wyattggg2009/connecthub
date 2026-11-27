@@ -25,3 +25,16 @@ function packExtraApply(){for(const [id,key] of [['packQuiet','quiet'],['packQui
 
 function packSpeechClaim(id){if(!id||!packAudioUser)return true;try{const k='pack-spoken:'+packAudioUser,now=Date.now(),rows=JSON.parse(localStorage.getItem(k)||'[]').filter(x=>now-x[1]<600000);if(rows.some(x=>x[0]===id))return false;rows.push([id,now]);localStorage.setItem(k,JSON.stringify(rows.slice(-200)));return true}catch{return true}}
 window.addEventListener('storage',e=>{if(packAudioUser&&e.key==='pack-audio:'+packAudioUser){try{packAudioPrefs={...packDefaults,...JSON.parse(e.newValue||'{}')};if(packAudioPrefs.read==='off'||document.hidden&&!packAudioPrefs.backgroundRead)packStop();packApply()}catch{}}});
+
+// A push can wake an open page; fetch the message again under the signed-in user's RLS.
+if('serviceWorker'in navigator)navigator.serviceWorker.addEventListener('message',async e=>{
+ const p=e.data,uid=packAudioUser;if(p?.type!=='pack-read-incoming'||!uid||!packArmed||packAudioPrefs.read!=='all'||(document.hidden&&!packAudioPrefs.backgroundRead)||packAudioBusy()||!/^[0-9a-f-]{36}$/i.test(p.source||''))return;
+ try{let m,group='';if(p.kind==='message'){const r=await db.from('ch_messages').select('id,sender,recipient,body,created_at,removed,read_at,expires_at,attachment_name').eq('id',p.source).eq('recipient',uid).maybeSingle();if(r.error)return;m=r.data;if(!m||m.read_at||m.expires_at&&Date.parse(m.expires_at)<=Date.now())return}
+ else if(p.kind==='group'){const r=await db.from('ch_group_messages').select('id,sender,group_id,body,created_at,removed,attachment_name').eq('id',p.source).maybeSingle();if(r.error||!r.data)return;m=r.data;const member=await db.from('ch_group_members').select('muted,last_read_at').eq('group_id',m.group_id).eq('user_id',uid).maybeSingle();if(member.error||!member.data||member.data.muted||Date.parse(member.data.last_read_at)>=Date.parse(m.created_at))return;const g=await db.from('ch_groups').select('name').eq('id',m.group_id).maybeSingle();group=g.data?.name||'a group'}else return;
+ if(!m||m.removed||m.sender===uid||Date.now()-Date.parse(m.created_at)>120000||packQuiet(m.sender))return;
+ const sender=await db.from('ch_profiles').select('display_name').eq('id',m.sender).maybeSingle();if(sender.error||!sender.data||packAudioUser!==uid||packAudioPrefs.read!=='all'||packAudioBusy()||document.hidden&&!packAudioPrefs.backgroundRead||packUtterances.size>=4||!packSpeechClaim(m.id))return;
+ // No microphone or spoken confirmation is initiated by a background push.
+ const gm=String(m.body||'').match(/^\[GIPHY:[A-Za-z0-9]{1,64}\](?:\n([\s\S]*))?$/),body=gm?'Sent a GIF'+(gm[1]?'. '+gm[1]:''):/^\[WATCH:[0-9a-f-]{36}\]$/i.test(m.body)?'Sent a watch party invitation':m.attachment_name&&(!m.body||m.body==='Attachment'||m.body==='Photo')?'Sent an attachment':m.body;
+ packSpeak((packAudioPrefs.sender?sender.data.display_name+(group?' in '+group:'')+' says: ':'')+body);
+ }catch{}
+});
