@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'25.0.0',name:'Voice & Rich Alerts'});
+const PACK_RELEASE=Object.freeze({version:'26.0.0',name:'Make It Yours'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
