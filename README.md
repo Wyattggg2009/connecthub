@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**32.0.0 — Steady Connection.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**33.0.0 — The Next Generation.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -23,3 +23,6 @@ Fixing Bella: notification preparation separates browser permission from subscri
 Optional verified email notifications and reply-by-email for direct messages. See EMAIL-SETUP.md for provider credentials, domain and webhook setup. No email delivery until configured and opted in.
 
 Steady Connection adds caller-led ICE restart signaling, bounded recovery attempts, independent call event polling, adaptive video bitrate, device replacement guards and a manual reconnect button. Both devices need this release for recovery. Calls still use STUN only; restrictive networks may need TURN. Physical device tests remain necessary.
+
+## Version 33
+New responsive chat UI, inbox filters, pins, nicknames, local drafts, folder names, recent previews, online strip, unified direct-message search, accent and accessibility settings, call readiness and picture-in-picture fallback, grouped notification center, admin metrics and announcements, feedback, My Pack Studio with shared events/media timeline and AES-GCM local journal. Existing modules and database data retained. Group calls, TURN relay infrastructure, E2EE chat, silent-send, alternative push provider, advanced 3D/game redesigns are not implemented. Browser and two-device testing remains required. Vault, preferences and drafts are local; vault is encrypted, drafts/preferences are not. Do not lose your vault passphrase.
