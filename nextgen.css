@@ -1,0 +1,165 @@
+/* The Next Generation — shared, responsive visual system. Existing module IDs remain stable. */
+:root{--ng-bg:#0b0c0e;--ng-panel:#131518;--ng-raised:#1c1e22;--ng-line:#303239;--ng-accent:#dedfe3;--ng-muted:#a3a6ad;--ng-radius:19px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+:root[data-ng-accent=emerald]{--ng-accent:#90e0b4}
+:root[data-ng-accent=blue]{--ng-accent:#a8c9ff}
+:root[data-ng-accent=rose]{--ng-accent:#f3b1c7}
+:root[data-ng-accent=violet]{--ng-accent:#d0bcff}
+:root[data-ng-accent=amber]{--ng-accent:#f4d194}
+:root[data-ng-scale=large]{font-size:18px}
+:root[data-ng-scale=compact]{font-size:14px}
+:root[data-ng-motion=off] *, :root[data-ng-motion=off] *::before,:root[data-ng-motion=off] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body{background:var(--ng-bg)}
+button,input,select,textarea{border-radius:12px}
+button:not(:disabled),a{ -webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--ng-accent);outline-offset:3px}
+.primary{background:var(--ng-accent);color:#101114;border-color:transparent}
+.primary:hover{filter:brightness(1.08)}
+.packBoot{background:radial-gradient(ellipse at 50% 32%,#3b3e47 0%,#15171a 32%,#090a0c 75%)}
+.packBootInner{gap:16px;position:relative}
+.packBootLogo{border-radius:50%;width:118px;box-shadow:0 0 0 9px #ffffff08,0 0 0 22px #ffffff05,0 0 100px #cdd4ee30;animation:ngHalo 3.8s ease-in-out infinite}
+@keyframes ngHalo{50%{box-shadow:0 0 0 12px #ffffff0c,0 0 0 26px #ffffff07,0 0 120px #d1d6e640}}
+.packBootBrand{letter-spacing:.43em}.packBootTagline{letter-spacing:.18em}.packBootInfo{border-radius:14px;background:#ffffff06;backdrop-filter:blur(14px)}
+#auth.center,#profileSetup.center{background:radial-gradient(ellipse at 15% 10%,#353942 0%,transparent 50%),radial-gradient(ellipse at 80% 100%,#21232a 0%,transparent 50%),#0a0b0e}
+#loginForm.panel,#profileForm.panel{border-radius:28px;padding:clamp(24px,5vw,40px);border-color:#ffffff18;background:#191b20e8;box-shadow:0 22px 100px #0009;gap:17px;backdrop-filter:blur(16px)}
+#loginForm .logo{width:72px;height:72px;border-radius:22px}
+#loginForm h1{font-size:2.4rem;letter-spacing:-.055em;line-height:1}
+#loginForm input{min-height:48px;background:#101114;border-color:#353840}
+.ngLoginKicker{font-size:11px;color:#c5c7cc;letter-spacing:.16em;text-transform:uppercase}
+.ngLoginFooter{display:flex;gap:10px;justify-content:space-between;align-items:center;color:var(--ng-muted);font-size:11px}
+.ngContactTitle{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ngContactTitle h1{font-size:1.65rem;letter-spacing:-.045em;margin:0;font-weight:730}
+.ngConnection{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#a6a8ad}
+.ngConnection:before{content:'';width:7px;height:7px;border-radius:50%;background:#8dd8ac}
+.ngConnection[data-offline=true]:before{background:#f3b775}
+.ngTabs{display:flex;gap:5px;overflow:auto;scrollbar-width:none;flex:none;padding:3px 0}
+.ngTabs button{border:1px solid var(--ng-line);border-radius:99px;background:transparent;padding:7px 10px;font-size:11px;white-space:nowrap;min-height:33px;color:#c2c5cc}
+.ngTabs button[aria-pressed=true]{color:#141518;background:var(--ng-accent);border-color:transparent;font-weight:700}
+.ngActiveStrip{display:flex;gap:9px;overflow:auto;min-height:0;flex:none;scrollbar-width:none;padding:5px 0}
+.ngActiveStrip:empty{display:none}
+.ngActiveStrip button{display:grid;justify-items:center;gap:5px;padding:3px;background:none;border:0;width:59px;flex:none;color:#cbd0d5;font-size:10px}
+.ngActiveStrip .avatar{position:relative;width:40px;height:40px;border:2px solid #9bdab2}
+.ngActiveStrip span{max-width:57px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.ngContactMeta{display:flex;align-items:center;gap:6px;color:var(--ng-muted);font-size:10px}
+.ngContactTime{font-size:10px;color:var(--ng-muted);white-space:nowrap;align-self:flex-start;padding-top:6px}
+.contactText{min-width:0;flex:1}.contactText>span,.contactText>small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ngContactDraft{color:#f0c890!important}.ngPinned{font-size:10px;color:#c2c5cc}
+.ngWelcomeStats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:5px 0}
+.ngWelcomeStats>div{border:1px solid #ffffff13;background:#ffffff05;border-radius:15px;padding:13px 16px;min-width:102px;display:grid;gap:2px}
+.ngWelcomeStats strong{font-size:1.3rem;font-weight:650}
+.ngWelcomeStats small{font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.ngWelcomeSubtitle{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ng-muted)}
+.ngDate{align-self:center;color:#9ea2ab;background:#15171bbd;border:1px solid #ffffff0d;border-radius:99px;padding:5px 11px;font-size:11px;margin:10px 0 2px}
+#messages{overscroll-behavior:contain;scrollbar-width:thin}
+#messages .bubbleRow{position:relative;max-width:min(82%,690px);gap:3px}
+#messages .bubble{border:1px solid #ffffff0b;border-radius:20px 20px 20px 5px;padding:11px 15px;line-height:1.55;font-size:1rem;box-shadow:0 3px 12px #00000016}
+#messages .mine .bubble{border-radius:20px 20px 5px 20px}
+#messages:not([data-wallpaper]),#messages[data-wallpaper=default]{background:radial-gradient(ellipse at 10% 20%,#1d1f24 0%,transparent 55%),#101114}
+#messages:not([data-wallpaper]) .bubble,#messages[data-wallpaper=default] .bubble{background:#272a30;color:#f3f3f6}
+#messages:not([data-wallpaper]) .mine .bubble,#messages[data-wallpaper=default] .mine .bubble{background:var(--ng-accent);color:#15161a}
+#messages .stamp{font-size:10px;margin:3px 4px;color:#9da1aa}
+#messages .messageActions{display:flex;flex-wrap:wrap;gap:3px;opacity:1;max-height:0;overflow:hidden;transition:max-height .15s ease;visibility:hidden}
+#messages .bubbleRow.ngActions .messageActions,#messages .bubbleRow:focus-within .messageActions{max-height:160px;visibility:visible}
+#messages .bubbleRow:hover .messageActions{max-height:160px;visibility:visible}
+#messages .messageActions button{background:#1e2025;border-color:#373941;font-size:11px;padding:5px 8px;min-height:31px}
+.ngMessageMore{background:transparent;border:none;padding:3px 7px;color:#aaaeb7;min-height:25px;font-size:12px;margin-left:5px}
+.ngStampRow{display:flex;align-items:center;justify-content:flex-start}
+.mine .ngStampRow{justify-content:flex-end}
+.ngNewBubble{animation:ngIn .2s ease-out}
+@keyframes ngIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+#typingLine:not(:empty){color:#b8bdc6;font-size:12px;padding-left:18px}
+#typingLine:not(:empty):after{content:' ● ● ●';font-size:7px;animation:ngBlink 1.3s infinite}
+@keyframes ngBlink{50%{opacity:.3}}
+.ngChatTools{display:flex;gap:5px;align-items:center}.ngChatTools button{font-size:12px}
+.ngDraftNotice{padding:4px 15px;color:#f0c890;font-size:11px}
+.ngJump{align-self:center;border-radius:99px;background:#2d3037;font-size:11px;margin:4px 0;z-index:1}
+.ngSettingsGrid{display:grid;gap:12px;margin:10px 0}
+.ngSettingsGrid label{display:grid;gap:5px}
+.ngSettingsGrid .switchRow{display:flex}
+.ngDialogNote{font-size:12px;color:var(--ng-muted);line-height:1.5}
+.ngQuickLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ngQuickLinks a,.ngQuickLinks button{background:#21242a;border:1px solid #343741;border-radius:13px;padding:12px;text-decoration:none;text-align:left;color:inherit}
+.ngSearchResult{display:grid;text-align:left;gap:4px;background:#1f2227;padding:11px;margin:5px 0;width:100%;border:1px solid #353740;border-radius:12px}
+.ngSearchResult small{color:#a6aab3;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.ngTestStage{background:#0b0c0f;min-height:120px;display:grid;place-items:center;border-radius:15px;overflow:hidden}
+.ngTestStage video{width:100%;max-height:230px;object-fit:contain}
+.ngMeter{height:7px;border-radius:99px;background:#252830;overflow:hidden}
+.ngMeter i{display:block;height:100%;width:0;background:var(--ng-accent)}
+.ngLock{position:fixed;inset:0;z-index:1000;background:#08090b;display:grid;place-items:center;padding:20px}
+.ngLock .panel{max-width:370px;text-align:center}
+#callPanel:not(.callMini){background:#090a0de8;backdrop-filter:blur(12px)}
+#callPanel:not(.callMini) .callWindow{background:#111318;border:1px solid #ffffff17;border-radius:28px;padding:clamp(12px,2.5vw,24px);box-shadow:0 25px 100px #0008}
+#callPanel:not(.callMini) .stage{border-radius:20px;background:radial-gradient(ellipse,#2b2f38,#101114)}
+#callPanel #localVideo{border-radius:14px;border:2px solid #ffffff33;box-shadow:0 10px 24px #0008}
+#callPanel .controls button{border-radius:99px;padding:11px 15px;font-size:12px;min-height:44px}
+#callPanel .controls .danger{background:#c23f58;color:#fff;border-color:transparent}
+#callPanel .controls .good{background:#267a55;color:#fff;border-color:transparent}
+#callRecovery:empty{display:none}
+.adminShell .adminCard,.denCard{background:var(--ng-panel);border-color:var(--ng-line);border-radius:var(--ng-radius)}
+.ngAdminHero{border:1px solid var(--ng-line);background:radial-gradient(ellipse at 90% 0%,#333945,transparent 60%),#14161b;border-radius:22px;padding:24px;margin-bottom:20px;display:grid;gap:14px}
+.ngAdminHero h1{margin:0;font-size:clamp(24px,4vw,38px);letter-spacing:-.045em}
+.ngAdminMetrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px}
+.ngAdminMetrics>div{display:grid;gap:4px;padding:15px;border:1px solid #ffffff16;background:#ffffff05;border-radius:15px}
+.ngAdminMetrics strong{font-size:1.5rem}
+.ngAdminHero p{margin:0}
+@media(min-width:721px){
+:root{--pack-rail:clamp(147px,15vw,205px);--pack-contacts:clamp(215px,25vw,330px)}
+#app>aside{background:#13151a;border-color:#2b2e35}
+#app .desktopRail{background:#0e1013;border-color:#282a30;padding:19px 10px;gap:5px}
+#app .desktopRail .brand{padding:4px 4px 17px;border-bottom:1px solid #2d3037}
+#app .desktopRail .brand strong{font-size:1.1rem;letter-spacing:-.03em}
+#app .desktopRail>.adminLink,#app .desktopRail>button{border-radius:10px;font-size:12px;padding:11px 9px}
+#app .desktopContacts{background:#17191e;padding:19px 11px;gap:10px}
+#app .desktopContacts .contact{border-radius:14px;padding:12px 8px;background:transparent;border:1px solid transparent}
+#app .desktopContacts .contact:hover{background:#252830}
+#app .desktopContacts .contact.selected{background:#2b2e35;border-color:#494d56}
+#app .desktopContacts .avatar{width:43px;height:43px}
+#app .desktopContacts .sectionTitle{display:none}
+#app #chat>header{background:#17191e;border-color:#2b2d34;padding:16px}
+#app #chat>.chatTools{background:#14161a}
+#app #messageForm{background:#17191e;border-top-color:#2e3037}
+#app #messageForm textarea{border-radius:22px;background:#24272e;padding:13px 16px}
+#app #messageForm button[type=submit]{border-radius:15px}
+#welcome{background:radial-gradient(ellipse at 48% 25%,#262a33,transparent 60%),#101114;gap:12px}
+#welcome .desktopWelcomeActions{margin:8px 0}
+#welcome .desktopWelcomeActions> *{background:#1b1e25;border-color:#333741;border-radius:17px}
+#welcome h1{letter-spacing:-.045em}
+}
+@media(max-width:720px){
+#app>aside{padding:12px 13px;gap:10px;background:#111318}
+#app>aside .desktopRail{display:contents}
+#app>aside .desktopRail .brand{display:none}
+#app>aside .desktopRail>.packFeedLink,#app>aside .desktopRail>button,#app>aside .desktopRail>.hubNav{display:none!important}
+#app>aside .desktopContacts{display:contents}
+#app>aside .sectionTitle{display:none}
+#app>aside #contacts{min-height:0;flex:1 1 0;overflow:auto}
+#app>aside .contact{border-radius:15px;padding:12px 9px;margin:2px 0;background:#1a1c22}
+#app>aside .contact.selected{background:#30343d}
+#app>aside .avatar{width:44px;height:44px}
+#app>aside #search{background:#20232a;min-height:43px}
+#app .packAccountMenu{flex:none;max-height:30vh;overflow:auto}
+.ngContactTitle h1{font-size:1.9rem}
+.ngActiveStrip .avatar{width:40px!important;height:40px!important}
+#chat>header{padding:10px;background:#17191e}
+#chat>.chatTools{background:#15171c}
+#messages .bubble{font-size:.96rem}
+#messages .bubbleRow{max-width:88%}
+#messageForm{background:#17191e}
+#messageForm textarea{background:#24272e;border-radius:18px}
+.packMobileNav{background:#17191e;border-color:#30333b}
+.packMobileNav a,.packMobileNav button{color:#c7c9cf}
+#callPanel:not(.callMini){padding:8px}
+#callPanel:not(.callMini) .callWindow{max-height:98dvh;overflow:auto}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+/* Preserve the existing light mode's contrast. */
+:root[data-hub-theme=light]{--ng-bg:#eff1f5;--ng-panel:#fff;--ng-raised:#e8eaf0;--ng-line:#c6cad2;--ng-muted:#525967;--ng-accent:#d5dbe7}
+:root[data-hub-theme=light] #app .desktopContacts,:root[data-hub-theme=light] #app>aside,:root[data-hub-theme=light] #app #chat>header,:root[data-hub-theme=light] #app #messageForm{background:#f3f4f7;color:#20232b}
+:root[data-hub-theme=light] #app .desktopRail,:root[data-hub-theme=light] #app .desktopRail .brand,:root[data-hub-theme=light] #app #chat>.chatTools{background:#e7e9ef;color:#20232b}
+:root[data-hub-theme=light] #app .contact.selected,:root[data-hub-theme=light] #app .contact:hover{background:#d7dce6;color:#20232b}
+:root[data-hub-theme=light] #messages[data-wallpaper=default],:root[data-hub-theme=light] #messages:not([data-wallpaper]){background:#f5f6f8}
+:root[data-hub-theme=light] #messages .stamp{color:#4f5664}
+:root[data-hub-theme=light] #app #messageForm textarea{background:#fff;color:#15171d}
+:root[data-hub-theme=light] #welcome{background:#f5f6f8;color:#20232b}
+:root[data-hub-theme=light] #app>aside .contact{color:#20232b;background:#e8eaf0}
+:root[data-hub-theme=light] .ngTabs button{color:#353b46}
+:root[data-hub-theme=light] .ngConnection,:root[data-hub-theme=light] .ngActiveStrip button{color:#4b5362}
