@@ -44,3 +44,7 @@ Open `bunny-kingdom.html` from Chats or Pack Arena. Free spins (12 per UTC day),
 
 ## Version 38 preparation — console compatibility
 Open `console-check.html` directly on PS4 to check JavaScript syntax and browser capabilities. The report is local only. This is a diagnostic, not a PS4 compatibility release; actual hardware testing and feature-specific fallbacks are still required.
+
+
+## Bunny Kingdom 37.5 — Moonlight Adventure
+The existing game now has ten villages, five five-level buildings per village, 24 milestone cards across four sets, three companions with shared XP and bonus coins, shield defenses against NPCs, clue-based treasure digs, daily quests and free partner gifts. Existing account saves are retained; the new server endpoint is authenticated and preserves request idempotency. No wagers, paid currency, real-world prizes or attacks on real players. Both Our Den partners must enable game sharing for gift sending. Game-only history remains revocable. Database tests used rolled-back transactions, and actual browser/device tests remain outstanding. Version 38 is still reserved for console compatibility.
