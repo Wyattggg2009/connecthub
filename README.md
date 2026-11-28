@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**34.0.0 — Pack Reach.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**35.0.0 — Eclipse.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -31,3 +31,6 @@ Silent send: ordinary direct-message composer may suppress web push, email enque
 
 ## Version 34 — Pack Reach
 Optional ntfy.sh backup alert channel: each member generates a secret random topic, subscribes in ntfy on their own device, enables categories and tests. No API key or domain; generic event types only, no names, message content, source identifiers or GPS. Public topics are capability secrets, not authenticated private topics. 35 jobs/user/24h and 180/project/24h, provider limits may apply. Cache disabled, offline delivery not guaranteed. Signed service-only worker, own-topic/history RLS; test throttle and topic revocation. Direct, group, incoming/possible missed calls, feed, optional personal/direct plan reminders, notices and sign-in sessions. Silent/disappearing/read direct messages excluded, no message replies from ntfy. Web push remains separate. Email still requires provider setup. Telegram/Discord/SMS/native call UI are not implemented. See notifications.html. No member enrolled automatically.
+
+## Eclipse 35
+Shared visual refresh, fixed two-member Our Den allowlist, mood/quiz/date/keepsake/challenge timeline, future unlock enforced by RLS, real Connect Four with invitation/turn validation, live admin phone lab, drawing attachments, custom animated emoji stickers, conversation stats, priority and keyword highlights, and account-synced ntfy quiet hours/snoozing. Phone lab uses actual same-origin session; no mobile OS simulation, camera/mic/location disabled. Existing data retained. Advanced calls, Telegram/Discord, full 3D city/vehicles and E2EE remain separate work. Quiet hours apply only to ntfy backup, not web push. User-interface testing and actual device delivery remain necessary.
