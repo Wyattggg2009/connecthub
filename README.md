@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**37.0.0 — Bunny Kingdom.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**38.0.0 — Console Edition.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -48,3 +48,12 @@ Open `console-check.html` directly on PS4 to check JavaScript syntax and browser
 
 ## Bunny Kingdom 37.5 — Moonlight Adventure
 The existing game now has ten villages, five five-level buildings per village, 24 milestone cards across four sets, three companions with shared XP and bonus coins, shield defenses against NPCs, clue-based treasure digs, daily quests and free partner gifts. Existing account saves are retained; the new server endpoint is authenticated and preserves request idempotency. No wagers, paid currency, real-world prizes or attacks on real players. Both Our Den partners must enable game sharing for gift sending. Game-only history remains revocable. Database tests used rolled-back transactions, and actual browser/device tests remain outstanding. Version 38 is still reserved for console compatibility.
+
+
+## Version 38 — Console Edition
+- `index.html` detects PlayStation 4/5 user agents before loading the modern client and redirects to `console.html`. `?desktop=1` opts out. No device telemetry.
+- The standalone console client uses ES5-style JavaScript and XMLHttpRequest with authenticated Supabase REST and separate tab-session storage, not the modern Supabase JS SDK. Five-second foreground polling, direct/group text, quick replies, saved messages, signed attachments, direct unread alerts and recent calls.
+- Bunny Kingdom uses the existing adventure RPC and cloud saves. Arena has basic controls for all ten existing games, with property trade negotiation still delegated to the standard edition. Pack World supports existing rooms, 2D positions, decoration display and shared pet status; full construction and activities remain on the standard edition. Our Den provides a read-only notes view. Entertainment opens providers and existing watch/radio rooms; synchronized playback control remains on the standard edition.
+- Calling is experimental and only available if modern WebRTC and media access are exposed. Microphone/camera test buttons explicitly request and release hardware. Phone handoff displays a link containing the selected contact ID (no credentials); the phone must sign in and start its own call. Sony Party is separate. No claim of native PlayStation Party control, TURN relay or guaranteed PS4 WebRTC.
+- TV pointer and keyboard arrow focus, large-text and compact safe-area layouts; Sony-reserved buttons cannot be guaranteed. Browser diagnostics remain available.
+- Verified JavaScript syntax, mocked PS4/PS5 redirects and desktop bypass, mocked login/direct/group sends/Bunny spin, unavailable-WebRTC fallback. Real console, physical calling, GitHub Pages deployment and playback need verification. No database schema changes for this release.
