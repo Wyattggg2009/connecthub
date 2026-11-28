@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**35.0.0 — Eclipse.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**36.0.0 — Game Night.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -34,3 +34,6 @@ Optional ntfy.sh backup alert channel: each member generates a secret random top
 
 ## Eclipse 35
 Shared visual refresh, fixed two-member Our Den allowlist, mood/quiz/date/keepsake/challenge timeline, future unlock enforced by RLS, real Connect Four with invitation/turn validation, live admin phone lab, drawing attachments, custom animated emoji stickers, conversation stats, priority and keyword highlights, and account-synced ntfy quiet hours/snoozing. Phone lab uses actual same-origin session; no mobile OS simulation, camera/mic/location disabled. Existing data retained. Advanced calls, Telegram/Discord, full 3D city/vehicles and E2EE remain separate work. Quiet hours apply only to ntfy backup, not web push. User-interface testing and actual device delivery remain necessary.
+
+## Version 36 — Game Night
+Ten new saved, server-validated multiplayer games in `arena.html`: Dominion (territory conquest), Pack Estates (property economy and consensual trades), Checkers, Reversi, Gomoku, Mancala, Nim, Dots & Boxes, Hex, and Breakthrough. The two long-form games support 2–4 players; others support 2. Every accepted move persists in Supabase with a revision lock; only invited active, compatible members can read or mutate matches. All invitees must accept. The lobby supports resume, status filters, copyable private match links, move history (latest 60), and polling while visible. Existing Connect Four saves remain accessible at `connect-four.html`; tic-tac-toe stays in Den. Dominion and Pack Estates are original streamlined games, not official commercial adaptations. Both finish by round 30 or earlier victory; property credits have no monetary value. No automatic move reminders, chess, matchmaking, bots, or native offline sync. Actual phone/browser gameplay remains to be tested.
