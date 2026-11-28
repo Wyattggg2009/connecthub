@@ -4,7 +4,7 @@ Wolf-themed private messaging, voice and video calling, groups and push notifica
 The original repository and hosting URL remain unchanged to preserve existing installations.
 
 ## Current release
-**36.0.0 — Game Night.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
+**37.0.0 — Bunny Kingdom.** The release string is centralized in `pack-boot.js`. Startup shows the verified display name, best-effort device/browser information, and installed-web-app status. Device detection stays local; no telemetry is sent.
 
 Notification worker column grants, notification routing and diagnostics, unique answer guard, call device selection and connection metrics are included in this release. WebRTC still uses STUN without a TURN relay.
 
@@ -37,3 +37,10 @@ Shared visual refresh, fixed two-member Our Den allowlist, mood/quiz/date/keepsa
 
 ## Version 36 — Game Night
 Ten new saved, server-validated multiplayer games in `arena.html`: Dominion (territory conquest), Pack Estates (property economy and consensual trades), Checkers, Reversi, Gomoku, Mancala, Nim, Dots & Boxes, Hex, and Breakthrough. The two long-form games support 2–4 players; others support 2. Every accepted move persists in Supabase with a revision lock; only invited active, compatible members can read or mutate matches. All invitees must accept. The lobby supports resume, status filters, copyable private match links, move history (latest 60), and polling while visible. Existing Connect Four saves remain accessible at `connect-four.html`; tic-tac-toe stays in Den. Dominion and Pack Estates are original streamlined games, not official commercial adaptations. Both finish by round 30 or earlier victory; property credits have no monetary value. No automatic move reminders, chess, matchmaking, bots, or native offline sync. Actual phone/browser gameplay remains to be tested.
+
+
+## Version 37 — Bella’s Bunny Kingdom
+Open `bunny-kingdom.html` from Chats or Pack Arena. Free spins (12 per UTC day), three reward tiers, 15 village upgrades and saved account progress. No bets, purchases, transferable value or cash prizes. Server-generated spin results; duplicate request IDs are idempotent. Our Den members can explicitly opt into sharing their latest 100 game actions and progress with their existing partner. Sharing is off by default and can be revoked. Database tests used rolled-back transactions; no player test data was retained. Real browser sign-in and two-device tests remain necessary.
+
+## Version 38 preparation — console compatibility
+Open `console-check.html` directly on PS4 to check JavaScript syntax and browser capabilities. The report is local only. This is a diagnostic, not a PS4 compatibility release; actual hardware testing and feature-specific fallbacks are still required.
