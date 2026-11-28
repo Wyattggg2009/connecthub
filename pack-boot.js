@@ -1,5 +1,5 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'39.2.0',name:'Video Companion'});
+const PACK_RELEASE=Object.freeze({version:'39.3.0',name:'Contacts & Favorites'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
