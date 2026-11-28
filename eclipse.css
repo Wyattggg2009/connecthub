@@ -1,0 +1,58 @@
+/* Eclipse 35 — cohesive responsive interface; preserve all existing controls. */
+:root{--e-bg:#090b0e;--e-surface:#12151b;--e-raised:#1b2028;--e-line:#2b3039;--e-muted:#a2abb9;--e-text:#f3f4f7;--e-accent:var(--ng-accent,#d9e0e9)}
+body{background:var(--e-bg);color:var(--e-text)}
+#app .desktopRail{background:#0b0e13!important}
+#app .desktopRail .brand{border-bottom-color:#252b34;padding-bottom:18px}
+#app .desktopRail .brand .logo{background:#242a34;border:1px solid #424a58;box-shadow:0 0 18px #e1e8ff18}
+#app .desktopRail>.adminLink,#app .desktopRail>button{border-radius:12px;padding:10px 9px;font-size:12px}
+#app .desktopRail .desktopSectionLabel{color:#7f899b;letter-spacing:.16em}
+#app .desktopContacts{background:var(--e-surface)!important}
+#app .desktopContacts .contact{border-radius:16px;border-color:transparent}
+#app .desktopContacts .contact.selected{background:#2a313e;border-color:#485467}
+.ngContactTitle{padding-bottom:7px;border-bottom:1px solid #262d36}
+.ngContactTitle h1{letter-spacing:-.05em}
+#search,#chatSearch{background:#0e1117!important;border-color:#303845}
+.ngTabs button{border-color:#343b46}
+#chat>header{background:#141820!important;border-bottom-color:#2d3540}
+#chat>header .grow strong{font-size:1.02rem}
+#chat>header button{border-radius:14px}
+#chat>.chatTools{background:#10141a!important}
+#messages:not([data-wallpaper]),#messages[data-wallpaper=default]{background:radial-gradient(ellipse at 85% 0%,#212938 0%,transparent 60%),#0b0e13}
+#messages:not([data-wallpaper]) .bubble,#messages[data-wallpaper=default] .bubble{background:#202631;border-color:#3b424c;color:#eef0f4}
+#messages:not([data-wallpaper]) .mine .bubble,#messages[data-wallpaper=default] .mine .bubble{background:var(--e-accent);color:#141820;border:0}
+#messageForm{background:#151920!important;border-top-color:#2b3340}
+#messageForm textarea{background:#232a35!important;border-color:#394352}
+#messageForm button[type=submit]{background:var(--e-accent);color:#13161b;border:0}
+#app #welcome{background:radial-gradient(ellipse at 50% 28%,#323b4c,transparent 50%),#0a0d12}
+#app #welcome .logo{box-shadow:0 0 0 12px #a8b7d10c,0 0 70px #a8b7d133;border-radius:50%;overflow:hidden}
+#app .ngWelcomeStats>div,.desktopWelcomeActions>*{background:#161b23!important;border-color:#313a48!important}
+#auth.center{background:radial-gradient(ellipse at 20% 0%,#384457,transparent 55%),radial-gradient(ellipse at 90% 100%,#1c2838,transparent 50%),#080a0e}
+#loginForm.panel{border:1px solid #4a556b88;background:#11151cde!important;box-shadow:0 28px 90px #000b}
+#loginForm .logo{box-shadow:0 0 36px #b8c9ee26;border-radius:50%}
+#loginForm h1{font-size:2.7rem;letter-spacing:-.07em}
+#loginForm .ngLoginFooter{color:#9ca8ba}
+.packBoot{background:radial-gradient(ellipse at 50% 36%,#3c475d,#121720 34%,#080a0e 72%)}
+.packBootLogo{box-shadow:0 0 0 10px #ffffff08,0 0 80px #bdcfff40}
+.packBootInfo{background:#10151eaa;border-color:#384455}
+.packMobileNav{background:#151920!important;border-color:#333b47!important}
+.packMobileNav button,.packMobileNav a{border-radius:12px}
+#callPanel:not(.callMini) .callWindow{background:#0e141d!important;border-color:#38465c}
+#callPanel:not(.callMini) .stage{background:radial-gradient(ellipse,#2c394d,#10151d)}
+.adminShell .adminCard,.denCard,.studioCard,.worldCard{border-color:#343d4b!important;border-radius:22px;background:#151a22!important;box-shadow:0 8px 24px #0002}
+.adminShell .ngAdminHero,.studioHero,.worldHero{background:radial-gradient(ellipse at 90% 0%,#3d4b63,transparent 70%),#151a22!important;border:1px solid #3a4659;border-radius:25px}
+.studioHeader,.worldHeader,.denMain header{background:#131821!important;border-color:#333c4c}
+.studioNav a,.funNav button,.ngQuickLinks a,.ngQuickLinks button{background:#222a36;border-color:#3a4555;border-radius:13px}
+#denApp aside,#groupApp aside{background:#11151c;border-color:#303745}
+#denApp .denNav nav a,#denApp .denNav nav button{border-radius:12px}
+#groupApp #groupMessages{background:#0c1016}
+.bondPage{background:#08150f;color:#f6f0db}
+.bondHero{position:relative;overflow:hidden;padding:clamp(24px,6vw,52px);border-radius:28px;background:radial-gradient(ellipse at 90% 10%,#7e7543,transparent 42%),radial-gradient(ellipse at 15% 10%,#315e40,transparent 60%),#10251a;border:1px solid #56745a;box-shadow:0 20px 70px #00190966}
+.bondHero h1{font-family:Georgia,serif;font-size:clamp(34px,7vw,65px);font-weight:400;letter-spacing:-.045em;margin:12px 0}
+.bondHero small,.bondHero p{color:#e0d9b6}.bondMoon{position:absolute;font-size:150px;right:20px;top:-18px;color:#e9d99b35;pointer-events:none}.bondStats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.bondStats>div{padding:13px;border:1px solid #b6b98d44;border-radius:15px;background:#05241655;flex:1;min-width:95px}.bondStats strong{font-size:25px;display:block}.bondStats small{font-size:11px}.bondPage .studioCard{background:#14291d!important;border-color:#405d45!important}.bondPage .studioHeader{background:#112318!important;border-color:#3a583f}.bondPage .primary{background:#c4dfad;color:#16281a}.bondPage .studioNav a{background:#1c3828;border-color:#55734e}.bondNote{border-top:1px solid #496346;padding:15px 0;overflow-wrap:anywhere}.bondNote p{white-space:pre-wrap;margin:8px 0;color:#e9ead8}.bondNote h3{font-family:Georgia,serif;font-weight:500;font-size:20px}
+.fourBoard{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;background:#0c121e;border:1px solid #46536a;border-radius:20px;padding:10px;max-width:530px;margin:auto;width:100%}.fourBoard button{aspect-ratio:1;padding:0;min-width:0;min-height:0;font-size:clamp(20px,6vw,45px);line-height:1;background:#222a39;color:#667387;border-radius:50%;border:1px solid #43516a}.fourBoard button[data-disc="1"]{background:#203d31;color:#9de7ad}.fourBoard button[data-disc="2"]{background:#473a22;color:#f0cc78}.fourBoard button:disabled{opacity:1;cursor:default}.fourBoard button:not(:disabled):hover{outline:2px solid #ebedf5}#games{display:flex;flex-wrap:wrap;gap:7px}
+.eclipseDraw{width:100%;height:auto;aspect-ratio:4/3;touch-action:none;background:white;border:1px solid #8791a0;border-radius:15px}.eclipseSticker{font-size:clamp(34px,9vw,60px);line-height:1.2;text-align:center;animation:eclipsePop .45s ease-out}.eclipseSticker:hover{animation:eclipsePop .45s ease-out}@keyframes eclipsePop{0%{transform:scale(.5) rotate(-8deg)}65%{transform:scale(1.15) rotate(5deg)}100%{transform:none}}
+.eclipseStats{display:grid;gap:10px}.eclipseStats>div{padding:12px;background:#212a36;border:1px solid #3b4658;border-radius:12px}
+@media(max-width:720px){#app>aside{background:#11151c!important;padding:12px!important}#app>aside .contact{background:#1a212b!important;border-radius:16px}#app>aside .contact.selected{background:#343e50!important}#app .ngContactTitle h1{font-size:1.9rem}#chat>header button{font-size:11px;padding:7px}#chat>header #locChatOpen{font-size:0;padding:7px}#chat>header #locChatOpen:after{content:'📍';font-size:15px}#messageForm{padding:8px;gap:4px}#messageForm button{padding:7px 5px;font-size:11px;min-width:30px}.fourBoard{gap:4px;padding:6px}.studioHeader{flex-wrap:wrap}}
+:root[data-hub-theme=light] #app .desktopContacts,:root[data-hub-theme=light] #app>aside,:root[data-hub-theme=light] #chat>header,:root[data-hub-theme=light] #messageForm,:root[data-hub-theme=light] #chat>.chatTools,:root[data-hub-theme=light] #app #welcome{background:#e8edf3!important;color:#1c2533}
+:root[data-hub-theme=light] #app .desktopRail{background:#e2e7ef!important;color:#243044}:root[data-hub-theme=light] #app .contact{background:#edf0f5!important;color:#1c2533}:root[data-hub-theme=light] #app .contact.selected{background:#d0d9e7!important}:root[data-hub-theme=light] #search,:root[data-hub-theme=light] #chatSearch,:root[data-hub-theme=light] #messageForm textarea{background:#fff!important;color:#151c27}:root[data-hub-theme=light] #messages:not([data-wallpaper]),:root[data-hub-theme=light] #messages[data-wallpaper=default]{background:#f0f3f7}:root[data-hub-theme=light] #app .ngWelcomeStats>div,:root[data-hub-theme=light] .desktopWelcomeActions>*{background:#e0e6ef!important;color:#1b2533}
+@media(prefers-reduced-motion:reduce){.eclipseSticker{animation:none}}
