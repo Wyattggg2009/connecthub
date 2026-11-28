@@ -1,18 +1,21 @@
 /* The Pack release information and startup screen. No device telemetry is sent. */
-const PACK_RELEASE=Object.freeze({version:'37.0.0',name:'Bunny Kingdom'});
+const PACK_RELEASE=Object.freeze({version:'38.0.0',name:'Console Edition'});
 let bootGeneration=0,bootNamedAt=0,bootTimer=null;
 const bootEl=id=>document.getElementById(id);
 function packDeviceInfo(){
  const ua=navigator.userAgent||'',platform=navigator.userAgentData?.platform||navigator.platform||'';
  const ios=/iPhone|iPad|iPod/.test(ua)||(/Mac/.test(platform)&&navigator.maxTouchPoints>1);
  let os='Unknown OS',device='Device',browser='Web browser';
- if(ios){os=/iPhone|iPod/.test(ua)?'iOS':'iPadOS';device=os==='iOS'?'iPhone':'iPad'}
+ if(/PlayStation\s*4|PS4\b/i.test(ua)){os='PlayStation 4 system software';device='PS4'}
+ else if(/PlayStation\s*5|PS5\b/i.test(ua)){os='PlayStation 5 system software';device='PS5'}
+ else if(ios){os=/iPhone|iPod/.test(ua)?'iOS':'iPadOS';device=os==='iOS'?'iPhone':'iPad'}
  else if(/CrOS/.test(ua)||/Chrome OS/i.test(platform)){os='ChromeOS';device='Chromebook'}
  else if(/Android/.test(ua)){os='Android';device=/Mobile/.test(ua)?'Phone':'Tablet'}
  else if(/Windows/i.test(ua+' '+platform)){os='Windows';device='PC'}
  else if(/Macintosh|MacIntel|macOS/i.test(ua+' '+platform)){os='macOS';device='Mac'}
  else if(/Linux/i.test(ua+' '+platform)){os='Linux';device='Computer'}
- if(/Edg(?:A|iOS)?\//.test(ua))browser='Microsoft Edge';
+ if(/PlayStation\s*[45]|PS[45]\b/i.test(ua))browser='PlayStation Internet Browser';
+ else if(/Edg(?:A|iOS)?\//.test(ua))browser='Microsoft Edge';
  else if(/OPR\/|OPiOS\//.test(ua))browser='Opera';
  else if(/SamsungBrowser\//.test(ua))browser='Samsung Internet';
  else if(/Firefox\/|FxiOS\//.test(ua))browser='Firefox';
